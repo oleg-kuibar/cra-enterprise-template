@@ -4,7 +4,7 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    "plugin:react/recommended",
+    'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:react/jsx-runtime',
     'plugin:storybook/recommended',
@@ -16,7 +16,7 @@ module.exports = {
   plugins: ['react-hooks', 'storybook', 'prettier', 'react-refresh'],
   settings: {
     react: {
-      version: "detect",
+      version: 'detect',
     },
     'import/resolver': {
       node: {
@@ -29,10 +29,7 @@ module.exports = {
     },
   },
   rules: {
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
-    ],
+    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     'no-unused-vars': [
       'error',
       {
@@ -44,7 +41,7 @@ module.exports = {
     ],
     'prettier/prettier': 'error',
     'react/react-in-jsx-scope': 'off', // Not needed in React 17+
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     '@typescript-eslint/ban-ts-comment': [
       'error',
       {
@@ -62,6 +59,13 @@ module.exports = {
     '@typescript-eslint/no-var-requires': 'error',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'react/require-default-props': 'off', // Disable this rule as we are using Zod,
-    'import/no-unresolved': 'off' // Disable this rule as we are using Vite instead of webpack or babel
+    'import/no-unresolved': 'off', // Disable this rule as we are using Vite instead of webpack or babel
+    'react/function-component-definition': [
+      2,
+      {
+        namedComponents: ['function-declaration', 'arrow-function'],
+        unnamedComponents: 'arrow-function',
+      },
+    ],
   },
 };
